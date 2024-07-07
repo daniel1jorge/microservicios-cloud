@@ -2,6 +2,7 @@ package com.danielsilva.clientes_crud.controller;
 
 import com.danielsilva.clientes_crud.model.Client;
 import com.danielsilva.clientes_crud.services.ClientService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import java.util.List;
 public class ClientController {
     private final ClientService clientService;
 
+    @Operation(summary = "save in DB a client from body")
     @PostMapping
     public ResponseEntity<Client> post(@RequestBody Client client){
         return ResponseEntity.created(
@@ -27,11 +29,13 @@ public class ClientController {
                 .build();
     }
 
-    @GetMapping(path = "{name}")
-    public ResponseEntity<Client> get(@PathVariable String name){
-        return ResponseEntity.ok(this.clientService.searhByUserName(name));
+    @Operation(summary = "GET client from DB with username")
+    @GetMapping(path = "{username}")
+    public ResponseEntity<Client> get(@PathVariable String username){
+        return ResponseEntity.ok(this.clientService.searhByUserName(username));
     }
 
+    @Operation(summary = "GET all client from DB")
     @GetMapping(path = "/all")
     public ResponseEntity<List> getAll(){
         return ResponseEntity.ok(this.clientService.getAll());

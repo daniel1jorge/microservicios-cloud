@@ -1,7 +1,7 @@
 server:
   port: 8082
   servlet:
-    contex-patch: /client-crud
+    context-patch: /client-crud
 spring:
   application:
     name: client-crud
