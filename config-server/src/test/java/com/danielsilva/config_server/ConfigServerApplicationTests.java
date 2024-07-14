@@ -1,10 +1,10 @@
-package com.danielsilva.RegisitryServer;
+package com.danielsilva.config_server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegisitryServerApplicationTests {
+class ConfigServerApplicationTests {
 
 	@Test
 	void contextLoads() {
