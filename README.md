@@ -57,7 +57,7 @@ se encuentra corriendo en el puerto 8761.
 ```
 localhost:8671
 ```
-![eureka server](/info-adicional/eureka.JPG.JPG)
+![eureka server](/info-adicional/eureka.JPG)
 
 
 ## config-server
