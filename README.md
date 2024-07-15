@@ -29,3 +29,43 @@ _La arquitectura consiste en los siguientes componentes:_
 git clone https://github.com/daniel1jorge/microservicios-cloud.git
 cd microservicios-cloud
 ```
+
+## _Leer importante_
+este branch se tiene 3 microservicios:
+
+- clientes-crud
+- RegisitryServer
+- config-server
+ 
+## clientes-crud
+
+Este proyecto posee Swagger integrado, para verificar su documentacion.
+```
+localhost:<PUERTO>/swagger-ui/index.html
+```
+![info swagger](/info-adicional/swagger.JPG)
+Se puede observar que este microservicio tiene 3 endpoint 
+- POST /client para agregar nuevo cliente.
+- GET /client/{username} obtener un cliente por su nombre de usuario.
+- GET /client/all obtener todos los clientes.
+
+## RegisitryServer
+
+Este microservicio posee un server eureka para el regitro de los microservicios en el.
+se encuentra corriendo en el puerto 8761.
+
+```
+localhost:8671
+```
+![eureka server](/info-adicional/eureka.JPG.JPG)
+
+
+## config-server
+
+Este microservicio se encarga de descargar de github los config files extension yamel la cual es consumida por clientes-crud. 
+
+**Importante**
+el repo de github se encuentra como publico, de no estar publico se debe implementar configuracion adicional. 
+```
+https://github.com/daniel1jorge/spring-cloud-config.git
+```
